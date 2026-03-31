@@ -3,20 +3,26 @@
 // ==============================
 const defaultUsers = [
   {
+    username: "superadmin.ms",
+    password: "859801",
+    role: "superadmin",
+    roleLabel: "Super Administrador"
+  },
+  {
     username: "admin",
-    password: "1234",
+    password: "030608",
     role: "admin",
     roleLabel: "Administrador"
   },
   {
     username: "vendas",
-    password: "1234",
+    password: "1245",
     role: "vendas",
     roleLabel: "Operador de Vendas"
   },
   {
     username: "producao",
-    password: "1234",
+    password: "1245",
     role: "producao",
     roleLabel: "Operador de Produção"
   }
@@ -30,7 +36,7 @@ const modules = [
     id: "hb",
     title: "Food Express System - HB",
     description: "Sistema de vendas e pedidos da operação HB.",
-    allowedRoles: ["admin", "vendas"],
+    allowedRoles: ["superadmin", "admin", "vendas"],
     link: "modules/hb/index.html",
     category: "vendas",
     badge: "ATENDIMENTO",
@@ -40,7 +46,7 @@ const modules = [
     id: "sf",
     title: "Food Express System - SF",
     description: "Sistema de vendas e pedidos da operação Street Food.",
-    allowedRoles: ["admin", "vendas"],
+    allowedRoles: ["superadmin", "admin", "vendas"],
     link: "modules/sf/index.html",
     category: "vendas",
     badge: "STREET FOOD",
@@ -50,7 +56,7 @@ const modules = [
     id: "defumados",
     title: "Recipe Engine - Defumados",
     description: "Módulo de receitas e produção da linha de defumados.",
-    allowedRoles: ["admin", "producao"],
+    allowedRoles: ["superadmin", "admin", "producao"],
     link: "modules/defumados/index.html",
     category: "producao",
     badge: "PRODUÇÃO",
@@ -60,7 +66,7 @@ const modules = [
     id: "linguicas",
     title: "Recipe Engine - Linguiças",
     description: "Módulo de receitas e produção da linha de linguiças.",
-    allowedRoles: ["admin", "producao"],
+    allowedRoles: ["superadmin", "admin", "producao"],
     link: "modules/linguicas/index.html",
     category: "producao",
     badge: "RECEITAS",
@@ -79,7 +85,17 @@ function getUsers() {
     return defaultUsers;
   }
 
-  return JSON.parse(users);
+  const parsedUsers = JSON.parse(users);
+
+  const hasSuperAdmin = parsedUsers.some(user => user.username === "superadmin.ms");
+  const hasAdmin = parsedUsers.some(user => user.username === "admin");
+
+  if (!hasSuperAdmin || !hasAdmin) {
+    localStorage.setItem("msgt_users", JSON.stringify(defaultUsers));
+    return defaultUsers;
+  }
+
+  return parsedUsers;
 }
 
 function saveUsers(users) {
@@ -121,15 +137,13 @@ function handleLogin(event) {
   if (foundUser) {
     setCurrentUser(foundUser);
     window.location.href = "dashboard.html";
-  } else {
-    if (message) {
-      message.textContent = "Usuário ou senha inválidos.";
-    }
+  } else if (message) {
+    message.textContent = "Usuário ou senha inválidos.";
   }
 }
 
 // ==============================
-// DASHBOARD PREMIUM V2
+// DASHBOARD
 // ==============================
 function loadDashboard() {
   const user = getCurrentUser();
@@ -165,7 +179,7 @@ function loadDashboard() {
     moduleCount.textContent = availableModules.length;
   }
 
-  if (user.role === "admin" && adminButton) {
+  if (user.username === "superadmin.ms" && adminButton) {
     adminButton.classList.remove("hidden");
   }
 
@@ -235,7 +249,7 @@ function loadAdminPage() {
     return;
   }
 
-  if (user.role !== "admin") {
+  if (user.username !== "superadmin.ms") {
     window.location.href = "dashboard.html";
     return;
   }
@@ -261,9 +275,9 @@ function renderUsers() {
           <div class="user-card-info">
             <h3>${user.username}</h3>
             <p>Perfil: ${user.roleLabel}</p>
-            <p>Senha: ${user.password}</p>
           </div>
-          <div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn-secondary" onclick="resetPassword(${index})">Redefinir Senha</button>
             <button class="btn-danger" onclick="deleteUser(${index})">Excluir</button>
           </div>
         </div>
@@ -305,6 +319,7 @@ function handleNewUser(event) {
   }
 
   const roleMap = {
+    superadmin: "Super Administrador",
     admin: "Administrador",
     vendas: "Operador de Vendas",
     producao: "Operador de Produção"
@@ -331,13 +346,38 @@ function handleNewUser(event) {
   renderUsers();
 }
 
+function resetPassword(index) {
+  const users = getUsers();
+
+  if (!users[index]) return;
+
+  const newPassword = prompt(`Digite a nova senha para o usuário "${users[index].username}":`);
+
+  if (newPassword === null) return;
+
+  const trimmedPassword = newPassword.trim();
+
+  if (!trimmedPassword) {
+    alert("A senha não pode ficar vazia.");
+    return;
+  }
+
+  users[index].password = trimmedPassword;
+  saveUsers(users);
+  alert(`Senha do usuário "${users[index].username}" redefinida com sucesso.`);
+  renderUsers();
+}
+
 function deleteUser(index) {
   const users = getUsers();
 
   if (!users[index]) return;
 
-  if (users[index].username === "admin") {
-    alert("O usuário admin padrão não pode ser excluído.");
+  if (
+    users[index].username === "superadmin.ms" ||
+    users[index].username === "admin"
+  ) {
+    alert("Os usuários padrão protegidos não podem ser excluídos.");
     return;
   }
 
