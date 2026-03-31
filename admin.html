@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MS GASTRO TECH - Área Administrativa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-body">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="logo msgt.png" alt="Logo MS GASTRO TECH" class="topbar-logo" />
+      <div>
+        <h1>Área Administrativa</h1>
+        <p>Gerenciamento geral da plataforma</p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <button class="btn-secondary" onclick="goToDashboard()">Dashboard</button>
+      <button class="btn-danger" onclick="logout()">Sair</button>
+    </div>
+  </header>
+
+  <main class="admin-container">
+    <section class="admin-section">
+      <h2>Usuários cadastrados</h2>
+      <div id="usersList" class="users-list"></div>
+    </section>
+
+    <section class="admin-section">
+      <h2>Cadastrar novo usuário</h2>
+      <form id="newUserForm" class="admin-form">
+        <input type="text" id="newUsername" placeholder="Usuário" required />
+        <input type="password" id="newPassword" placeholder="Senha" required />
+
+        <select id="newRole" required>
+          <option value="">Selecione o perfil</option>
+          <option value="admin">Administrador</option>
+          <option value="vendas">Operador de Vendas</option>
+          <option value="producao">Operador de Produção</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Cadastrar Usuário</button>
+      </form>
+      <p id="adminMessage" class="message"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

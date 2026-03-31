@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MS GASTRO TECH - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="logo msgt.png" alt="Logo MS GASTRO TECH" class="topbar-logo" />
+      <div>
+        <h1>MS GASTRO TECH</h1>
+        <p id="welcomeText">Bem-vindo</p>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <button id="adminButton" class="btn-secondary hidden" onclick="goToAdmin()">Área Administrativa</button>
+      <button class="btn-danger" onclick="logout()">Sair</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <section class="hero-panel">
+      <div class="hero-content">
+        <span class="hero-badge">PLATAFORMA CENTRAL</span>
+        <h2>Painel Principal</h2>
+        <p>
+          Acesse os módulos disponíveis de acordo com o seu perfil dentro da plataforma
+          MS GASTRO TECH.
+        </p>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-label">Perfil Atual</span>
+          <strong id="profileLabel">-</strong>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Módulos Liberados</span>
+          <strong id="moduleCount">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="salesSection" class="module-section hidden">
+      <div class="section-header">
+        <div>
+          <span class="section-tag vendas-tag">VENDAS</span>
+          <h3>Operação de Vendas</h3>
+          <p>Módulos voltados para atendimento, pedidos e operação comercial.</p>
+        </div>
+      </div>
+      <div id="salesModules" class="cards-grid"></div>
+    </section>
+
+    <section id="productionSection" class="module-section hidden">
+      <div class="section-header">
+        <div>
+          <span class="section-tag producao-tag">PRODUÇÃO</span>
+          <h3>Operação de Produção</h3>
+          <p>Módulos voltados para receitas, processos e gestão produtiva.</p>
+        </div>
+      </div>
+      <div id="productionModules" class="cards-grid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
