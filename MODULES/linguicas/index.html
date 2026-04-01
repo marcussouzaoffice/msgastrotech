@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Engine | v1.0</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="back-panel">
+  <a href="../../dashboard.html" class="back-btn">← Voltar ao Painel</a>
+</div>
+
+<div class="app">
+
+  <!-- SLIDER -->
+  <div class="slider">
+
+    <!-- TELA 1 - LOGO -->
+<section class="screen active inicio">
+  <img src="LOGO_RECIPE_ENGINE-removebg-preview.png" alt="Recipe Engine" class="logo">
+
+  <h1 class="titulo-sistema">
+    Seja bem-vindo ao<br>
+    <span>Recipe Engine</span>
+    <span> - Linguiças</span>
+  </h1>
+
+  <p class="subtitulo-sistema">
+    Inteligência aplicada à arte da cozinha
+  </p>
+
+  <button class="btn primary" onclick="nextScreen()">Entrar</button>
+</section>
+
+    <!-- TELA 2 - RESPONSÁVEL -->
+    <section class="screen">
+      <h2>Responsável pela produção</h2>
+      <input type="text" id="responsavel" placeholder="Digite o nome" />
+      <button class="btn primary" onclick="nextScreen()">Continuar</button>
+      <button class="btn secondary" onclick="irInicio()">Início</button>
+    </section>
+
+    <!-- TELA 3 - SISTEMA -->
+    <section class="screen">
+      <h2>Gerar Receita</h2>
+      <button class="btn secondary" onclick="abrirHistorico()">📜 Histórico</button>
+      <button class="btn secondary" onclick="irInicio()">Início</button>
+
+      <select id="tipoProteina" onchange="atualizarCampos()">
+        <option value="">Tipo de proteína</option>
+        <option value="frango">Frango</option>
+        <option value="bovina">Bovina</option>
+        <option value="suina">Suína</option>
+      </select>
+
+      <div id="camposFrango" class="hidden">
+        <input type="number" id="peito" placeholder="Peito de frango (kg) • 60%">
+        <input type="number" id="coxa" placeholder="Coxa/sobrecoxa (kg) • 40%">
+      </div>
+
+      <div id="campoUnico" class="hidden">
+        <input type="number" id="proteinaUnica" placeholder="Quantidade de carne (kg)">
+      </div>
+
+      <select id="sabor">
+        <option value="">Sabor da linguiça</option>
+      </select>
+
+      <button class="btn primary" onclick="gerarReceita()">Gerar Receita</button>
+    </section>
+
+    <!-- TELA 4 - LOADING -->
+    <section class="screen">
+      <div class="loader"></div>
+      <p class="loading-text">
+        Carregando sua receita...<br>
+        <span>Em breve um novo sabor artesanal</span>
+      </p>
+    </section>
+
+    <!-- TELA 5 - RESULTADO -->
+    <section class="screen">
+      <h2>Receita Gerada</h2>
+      <div id="resultado"></div>
+
+      <button class="btn secondary" onclick="novaReceita()">Nova Receita</button>
+      <button class="btn secondary" onclick="irInicio()">Início</button>
+    </section>
+
+    <!-- TELA 6 - HISTÓRICO -->
+  <section class="screen">
+      <h2>Histórico de Receitas</h2>
+      <div id="listaHistorico"></div>
+  
+      <button class="btn secondary" onclick="voltar()">Voltar</button>
+</section>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<footer class="rodape-sistema">
+  <span>©2026 MS TECHNOLOGY, Todos os Direitos Reservados. v1.0</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay">
+
+    <header>
+      <div class="logo" onclick="window.location.href='index.html'">
+        <img src="logoschetini.jpeg" alt="Logo Schetini">
+      </div>
+
+      <nav>
+        <span onclick="window.location.href='index.html'">Home</span>
+        <span onclick="window.location.href='pedidos.html'">Pedidos</span>
+        <span onclick="window.location.href='suporte.html'">Suporte</span>
+        <span onclick="window.location.href='admin.html'">Administrativo</span>
+        <span onclick="window.location.href='historico.html'">Histórico</span>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="panel">
+        <h2>Histórico de Pedidos</h2>
+
+        <input
+          type="text"
+          id="buscaHistorico"
+          placeholder="Buscar por cliente, número do pedido ou item"
+          oninput="buscarHistorico()"
+        >
+
+        <div id="filtroHistorico" class="hidden">
+          <h3>Relatório por data</h3>
+          <input type="date" id="dataInicio">
+          <input type="date" id="dataFim">
+          <button onclick="filtrarHistoricoPorData()">Filtrar</button>
+          <button onclick="carregarHistorico()">Limpar filtro</button>
+        </div>
+
+        <div id="historico"></div>
+      </div>
+    </main>
+
+    <footer>
+      MS TECHNOLOGY © 2026
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
