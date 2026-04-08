@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar-module">
+  <div class="topbar-left">
+    <img src="../../logo msgt.png" alt="Logo MS GASTRO TECH" class="topbar-logo">
+    <div>
+      <h2>MS GASTRO TECH</h2>
+      <span class="module-name">Food Express - HB</span>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+  </div>
+</div>
+<div class="overlay">
+
+<header>
+  <div class="logo" onclick="window.location.href='index.html'">
+    <img src="logoschetini.jpeg" alt="Logo Schetini">
+  </div>
+
+<nav>
+<nav>
+  <span onclick="window.location.href='../../dashboard.html'">Home</span>
+  <span onclick="window.location.href='index.html'">Pedidos</span>
+  <span onclick="window.location.href='suporte.html'">Suporte</span>
+  <span onclick="window.location.href='admin.html'">Administrativo</span>
+  <span onclick="window.location.href='historico.html'">Histórico</span>
+</nav>
+</header>
+
+<main class="container">
+
+  <input id="cliente" placeholder="Nome do cliente">
+
+  <select id="produto"></select>
+
+  <input id="qtd" type="number" value="1">
+
+  <textarea id="opcao" placeholder="Opção / Observação"></textarea>
+
+  <button onclick="addItem()">Adicionar Item</button>
+
+  <div id="lista"></div>
+
+  <div class="total" id="total">Total: R$0,00</div>
+
+  <button class="print" onclick="imprimir()">🖨️ Imprimir</button>
+
+</main>
+
+<footer>
+  MS TECHNOLOGY © 2026
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
