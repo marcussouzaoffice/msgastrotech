@@ -136,6 +136,19 @@ const receitas = {
       { nome: 'Queijo coalho', tipo: 'gkg', valor: 120 },
       { nome: 'Cebolinha', tipo: 'gosto' }
     ],
+    Pantaneira: [
+      { nome: 'Leite', tipo: '%', valor: 40 },
+      { nome: 'Água', tipo: '%', valor: 30 },
+      { nome: 'Sal', tipo: '%', valor: 2 },
+      { nome: 'Cachaça', tipo: '%', valor: 10 },
+      { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
+      { nome: 'Liga Gel', tipo: '%', valor: 0.50 },
+      { nome: 'Cura', tipo: '%', valor: 0.25 },
+      { nome: 'Pimenta Dedo de moça', tipo: 'gkg', valor: 0.001 },
+      { nome: 'Páprica Doce', tipo: '%', valor: 0.15 },
+      { nome: 'Coentro em Pó', tipo: '%', valor: 0.15 },
+      { nome: 'Bacon', tipo: '%', valor: 20 },
+    ],
     Nordestina: [
       { nome: 'Leite', tipo: '%', valor: 40 },
       { nome: 'Água', tipo: '%', valor: 10 },
