@@ -58,7 +58,7 @@ function carregarSabores(tipo) {
 
   const sabores = {
     frango: ['Goiana', 'Frangolone', 'Frangalho', 'Marguerita'],
-    bovina: ['Mandaka', 'Nordestina', 'Cuiabana', 'Costela Angus'],
+    bovina: ['Mandaka', 'Pantaneira', 'Nordestina', 'Cuiabana', 'Costela Angus'],
     suina: [
       'Bierwurst', 'Clássica', 'Rapadura', 'Pimenta Biquinho',
       'Queijo Coalho', 'Queijo Picante', 'Apimentada',
