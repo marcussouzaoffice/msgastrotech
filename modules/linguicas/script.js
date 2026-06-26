@@ -144,7 +144,7 @@ const receitas = {
       { nome: 'Alho in Natura', tipo: '%', valor: 1.3 },
       { nome: 'Liga Gel', tipo: '%', valor: 0.50 },
       { nome: 'Cura', tipo: '%', valor: 0.25 },
-      { nome: 'Pimenta Dedo de Moça', tipo: 'gkg', valor: 0.1 },
+      { nome: 'Pimenta Dedo de Moça', tipo: 'gkg', valor: 1 },
       { nome: 'Páprica Doce', tipo: '%', valor: 0.15 },
       { nome: 'Coentro em Pó', tipo: '%', valor: 0.15 },
       { nome: 'Bacon', tipo: '%', valor: 20 },
