@@ -141,10 +141,10 @@ const receitas = {
       { nome: 'Água', tipo: '%', valor: 30 },
       { nome: 'Sal', tipo: '%', valor: 2 },
       { nome: 'Cachaça', tipo: '%', valor: 10 },
-      { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
+      { nome: 'Alho in Natura', tipo: '%', valor: 1.3 },
       { nome: 'Liga Gel', tipo: '%', valor: 0.50 },
       { nome: 'Cura', tipo: '%', valor: 0.25 },
-      { nome: 'Pimenta Dedo de moça', tipo: 'gkg', valor: 0.001 },
+      { nome: 'Pimenta Dedo de Moça', tipo: 'gkg', valor: 0.1 },
       { nome: 'Páprica Doce', tipo: '%', valor: 0.15 },
       { nome: 'Coentro em Pó', tipo: '%', valor: 0.15 },
       { nome: 'Bacon', tipo: '%', valor: 20 },
@@ -186,7 +186,6 @@ const receitas = {
 
   suina: {
     Bierwurst: [
-      { nome: 'Toucinho', tipo: '%', valor: 15 },
       { nome: 'Água', tipo: '%', valor: 14 },
       { nome: 'Cerveja', tipo: '%', valor: 16 },
       { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -196,7 +195,6 @@ const receitas = {
       { nome: 'Pimenta bode', tipo: 'gkg', valor: 2 }
     ],
       'Clássica': [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -206,7 +204,6 @@ const receitas = {
   ],
 
   Rapadura: [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -218,7 +215,6 @@ const receitas = {
   ],
 
   'Pimenta Biquinho': [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -229,7 +225,6 @@ const receitas = {
   ],
 
   'Queijo Coalho': [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -240,7 +235,6 @@ const receitas = {
   ],
 
   'Queijo Picante': [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -253,7 +247,6 @@ const receitas = {
   ],
 
   Apimentada: [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -264,7 +257,6 @@ const receitas = {
   ],
 
   Suave: [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -276,7 +268,6 @@ const receitas = {
   ],
 
   'Salsicha Parrilheira': [
-    { nome: 'Toucinho', tipo: '%', valor: 15 },
     { nome: 'Água', tipo: '%', valor: 35 },
     { nome: 'Sal', tipo: '%', valor: 2.4 },
     { nome: 'Alho in natura', tipo: '%', valor: 1.3 },
@@ -288,7 +279,6 @@ const receitas = {
   ],
 
     'Apimentada DM': [
-      { nome: 'Toucinho', tipo: '%', valor: 15 },
       { nome: 'Água', tipo: '%', valor: 30 },
       { nome: 'Sal', tipo: '%', valor: 2.2 },
       { nome: 'Alho in natura', tipo: '%', valor: 1 },
