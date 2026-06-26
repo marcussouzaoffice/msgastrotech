@@ -5,7 +5,7 @@ const ingredientesLiquidos = [
   'Água',
   'Leite',
   'Cerveja',
-  'Cachaça'
+  'Cachaça',
   'Vinho tinto'
 ];
 
